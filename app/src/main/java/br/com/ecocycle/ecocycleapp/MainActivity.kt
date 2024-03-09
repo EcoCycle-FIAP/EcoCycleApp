@@ -9,7 +9,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    RenderScreen()
                 }
             }
         }
@@ -30,17 +29,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    EcoCycleAppTheme {
-        Greeting("Android")
-    }
+fun RenderScreen() {
+    // Aqui podemos chamar os componentes/telas que estamos desenvolvendo para testar em tela.
+    //Não esquecer de tirar depois!
+    Text(text = "exemplo")
 }
