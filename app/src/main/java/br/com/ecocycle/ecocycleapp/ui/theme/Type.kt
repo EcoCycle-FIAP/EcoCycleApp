@@ -13,7 +13,7 @@ val Jaldi = FontFamily(Font(R.font.jaldi_regular))
 
 val Typography = Typography(
     bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+        fontFamily = Jaldi,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
         lineHeight = 24.sp,
