@@ -15,10 +15,17 @@ import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.ModalPadrao
 
 @Composable
-fun ModalDetalhesMaterial(onDismissRequest: () -> Unit) {
+fun ModalDetalhesMaterial(
+    onDismissRequest: () -> Unit,
+    questionOne: String,
+    answerOne: String,
+    questionTwo: String,
+    answerTwo: String
+) {
     ModalPadrao(
         title = "Metal",
         titleFontSize = 24.sp,
+        onDismissRequest = onDismissRequest,
         modalContent = {
             Column(
                 verticalArrangement = Arrangement.Center,
@@ -27,7 +34,7 @@ fun ModalDetalhesMaterial(onDismissRequest: () -> Unit) {
                 Image(painter = painterResource(id = R.drawable.metalimg), contentDescription = "")
                 Spacer(modifier = Modifier.height(20.dp))
                 Text(
-                    text = "Quais são os produtos feitos de metal?",
+                    text = questionOne,
                     color = Color(
                         0xFF289B7E
                     ),
@@ -35,12 +42,11 @@ fun ModalDetalhesMaterial(onDismissRequest: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "No dia a dia, encontramos metal em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ " +
-                            "IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
+                    text = answerOne
                 )
                 Spacer(modifier = Modifier.height(30.dp))
                 Text(
-                    text = "O que pode ser feito com metal reciclado?",
+                    text = questionTwo,
                     color = Color(
                         0xFF289B7E
                     ),
@@ -48,11 +54,8 @@ fun ModalDetalhesMaterial(onDismissRequest: () -> Unit) {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Alguns dos produtos que podem ser feitos a partir do metal reciclado são..... " +
-                            "asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD " +
-                            "WLEKW. LSKDLSKLSK DLSKDS LDS."
-                )
+                    text = answerTwo)
             }
-        },
-        onDismissRequest = onDismissRequest)
+        }
+    )
 }
