@@ -8,6 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.CadastroScreen
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,6 +22,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     RenderScreen()
+                    CadastroScreen()
                 }
             }
         }
