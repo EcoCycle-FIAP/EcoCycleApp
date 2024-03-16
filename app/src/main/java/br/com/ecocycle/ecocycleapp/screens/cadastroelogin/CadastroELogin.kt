@@ -50,9 +50,10 @@ fun CadastroScreen() {
                     fontSize = 16.sp
                 )
             }
-            Column(modifier = Modifier
+            Column(horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 40.dp)
+                .padding(horizontal = 45.dp)
             ) {
                 Card (modifier = Modifier
                     //.height(300.dp)
