@@ -24,6 +24,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.CadastroScreen
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
@@ -51,50 +52,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RenderScreen() {
-    val context = LocalContext.current
 
-    var showDialog by remember { mutableStateOf(false) }
-
-    fun showAlertDialog() {
-        showDialog = true
-    }
-
-    fun closeAlertDialog() {
-        showDialog = false
-    }
-
-    Column {
-        // Botão para exibir o AlertDialog
-        Button(
-            onClick = { showAlertDialog() },
-            modifier = Modifier
-                .padding(16.dp)
-                .background(colorResource(id = R.color.primary)),
-            colors = ButtonDefaults.buttonColors(contentColor = Color.White)
-        ) {
-            Text(text = "Mostrar Pop-up")
-        }
-
-        if (showDialog) {
-            ModalPadrao(
-                title = "Teste",
-                titleFontSize = 24.sp,
-                textComponent = { Column {
-                    Text(text = "teste")
-                    Text(text = "TETE")
-                }},
-                onDismissRequest = {}
-            )
-        }
-
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun ComponentPreview(){
-    RenderScreen()
 }
