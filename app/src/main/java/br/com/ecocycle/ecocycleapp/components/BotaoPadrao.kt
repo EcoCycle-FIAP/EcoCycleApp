@@ -15,21 +15,29 @@ import androidx.compose.ui.unit.sp
 import br.com.ecocycle.ecocycleapp.R
 
 @Composable
-fun BotaoPadrao(onClick: () -> Unit, text: String) {
+fun BotaoPadrao(
+    onClick: () -> Unit,
+    text: String,
+    width: Int? = 300,
+    height: Int? = 55,
+    contentFontSize: Int,
+    containerColor: Int? = R.color.primary,
+    contentColor: Int? = R.color.white
+) {
     OutlinedButton(
         onClick = onClick,
         modifier = Modifier
-            .width(300.dp)
-            .height(55.dp),
+            .width(width?.dp ?: 300.dp)
+            .height(height?.dp ?: 55.dp),
         shape = RoundedCornerShape(25.dp),
         colors = ButtonDefaults.outlinedButtonColors(
-            containerColor = colorResource(id = R.color.primary), contentColor = colorResource(
-                id = R.color.white
+            containerColor = colorResource(id = containerColor!!), contentColor = colorResource(
+                id = contentColor!!
             )
         ),
         elevation = ButtonDefaults.buttonElevation(defaultElevation = 20.dp),
         border = BorderStroke(1.dp, colorResource(id = R.color.transparent))
     ) {
-        Text(text = text, fontSize = 18.sp)
+        Text(text = text, fontSize = contentFontSize.sp)
     }
 }

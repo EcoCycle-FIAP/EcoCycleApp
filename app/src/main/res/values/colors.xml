@@ -7,4 +7,5 @@
     <color name="gray">#FF7B7B7B</color>
     <color name="transparent">#00000000</color>
     <color name="input_background">#FFEDEDED</color>
+    <color name="modal_background">#FFF6F6F6</color>
 </resources>
