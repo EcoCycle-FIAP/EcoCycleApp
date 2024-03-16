@@ -1,6 +1,7 @@
 package br.com.ecocycle.ecocycleapp.screens.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -43,12 +44,13 @@ fun HomeScreen() {
                 .height(320.dp)
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Row {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
             CardMaterial(
                 image = R.drawable.metal,
-                imageDescription = "Foto de metal",
+                imageDescription = "Desenho de materiais de metal",
                 text = "Metal",
-                onClick = { showModalMetal = true })
+                onClick = { showModalMetal = true }
+            )
             if (showModalMetal) {
                 ModalDetalhesMaterial(
                     onDismissRequest = { showModalMetal = false },
@@ -58,14 +60,12 @@ fun HomeScreen() {
                     answerTwo = "Alguns dos produtos que podem ser feitos a partir do metal reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
                 )
             }
-        }
-        Spacer(modifier = Modifier.height(20.dp))
-        Row {
             CardMaterial(
                 image = R.drawable.plastico,
-                imageDescription = "Foto de plástico",
+                imageDescription = "Desenho de materiais de plástico",
                 text = "Plástico",
-                onClick = { showModalPlastico = true })
+                onClick = { showModalPlastico = true }
+            )
             if (showModalPlastico) {
                 ModalDetalhesMaterial(
                     onDismissRequest = { showModalPlastico = false },
@@ -76,48 +76,7 @@ fun HomeScreen() {
                 )
             }
         }
-
-        Column() {
-            Spacer(modifier = Modifier.height(20.dp))
-            Row {
-                CardMaterial(
-                    image = R.drawable.papel,
-                    imageDescription = "Foto de papel",
-                    text = "Papel",
-                    onClick = { showModalPapel = true })
-                if (showModalPapel) {
-                    ModalDetalhesMaterial(
-                        onDismissRequest = { showModalPapel = false },
-                        questionOne = "Quais são os produtos feitos de papel?",
-                        answerOne = "No dia a dia, encontramos papel em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
-                        questionTwo = "O que pode ser feito com papel reciclado?",
-                        answerTwo = "Alguns dos produtos que podem ser feitos a partir do papel reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
-                    )
-                }
-            }
-            Spacer(modifier = Modifier.height(20.dp))
-            Row() {
-                CardMaterial(
-                    image = R.drawable.vidro,
-                    imageDescription = "Foto de vidro",
-                    text = "Vidro",
-                    onClick = { showModalVidro = true })
-                if (showModalVidro) {
-                    ModalDetalhesMaterial(
-                        onDismissRequest = { showModalVidro = false },
-                        questionOne = "Quais são os produtos feitos de vidro?",
-                        answerOne = "No dia a dia, encontramos vidro em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
-                        questionTwo = "O que pode ser feito com vidro reciclado?",
-                        answerTwo = "Alguns dos produtos que podem ser feitos a partir do vidro reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
-                    )
-                }
-            }
-        }
-
-    }
-
-    Column {
-
+        Spacer(modifier = Modifier.height(20.dp))
     }
 }
 
