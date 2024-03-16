@@ -109,6 +109,7 @@ fun CadastroScreen() {
             ) {
                 Text(text = "Já possui uma conta? Entrar")
             }
+            
         }
     }
 }
