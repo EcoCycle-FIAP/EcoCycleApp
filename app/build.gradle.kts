@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
 android {
@@ -51,6 +52,7 @@ android {
 
 dependencies {
 
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -66,4 +68,19 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    val nav_version = "2.7.0"
+    implementation("androix.navigation:navigation-compose:$nav_version")
+
+    implementation("androix.compose.material3:material3:1.1.1")
+
+    implementation("com.google.maps.android:maps-compose:2.8.0")
+
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
+
+
+
+
 }

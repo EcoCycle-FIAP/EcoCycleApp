@@ -7,8 +7,15 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
-import br.com.ecocycle.ecocycleapp.screens.home.HomeScreen
+import br.com.ecocycle.ecocycleapp.screens.mapa.MapaLoad
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+
+
+val brazilState = LatLng(-15.793889, -47.882778)
+
+val defaultCameraPosition = CameraPosition.fromLatLngZoom(brazilState, 4f)
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +27,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    HomeScreen()
+                    MapaLoad()
                 }
             }
         }
     }
 }
+
+
