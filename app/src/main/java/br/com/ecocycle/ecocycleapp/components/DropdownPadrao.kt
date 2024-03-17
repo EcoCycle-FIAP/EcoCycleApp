@@ -26,7 +26,8 @@ import br.com.ecocycle.ecocycleapp.R
 fun DropdownPadrao(
     label: String,
     placeholder: String,
-    optionsList: List<String>
+    optionsList: List<String>,
+    modifier: Modifier = Modifier
 ) {
     var expanded by remember { mutableStateOf(false) }
     var selectedItem by remember { mutableStateOf("") }
@@ -56,7 +57,7 @@ fun DropdownPadrao(
             onValueChange = { selectedItem = it },
             modifier = Modifier.onGloballyPositioned { coordinates ->
                 inputWidth = coordinates.size.width
-            },
+            }.then(modifier),
             trailingIcon =
             {
                 Icon(
