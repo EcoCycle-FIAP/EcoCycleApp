@@ -13,11 +13,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -63,14 +65,12 @@ fun LoginScreen() {
                         fontFamily = FontFamily(Font(R.font.inika_bold))
                     )
                 }
-
                 Spacer(modifier = Modifier.height(12.dp))
                 Text(
                     text = "Entre na sua conta para continuar",
                     fontSize = 16.sp
                 )
             }
-
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
@@ -82,31 +82,33 @@ fun LoginScreen() {
                         .fillMaxWidth(),
                     colors = CardDefaults.cardColors(Color.White)
                 ) {
-
                     Spacer(modifier = Modifier.height(16.dp))
-
                     InputTextoPadrao(
                         label = "Email",
                         placeholder = "Digite seu email",
                         value = "",
                         onValueChange = {},
-                        trailingIcon = R.drawable.mail_icon,
-                        trailingIconDescription = "Ìcone de email"
+                        trailingIcon = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.mail_icon),
+                                contentDescription = "Ícone de email"
+                            )
+                        }
                     )
-
                     Spacer(modifier = Modifier.height(14.dp))
-
                     InputTextoPadrao(
                         label = "Senha",
                         placeholder = "Digite sua senha",
                         value = "",
                         onValueChange = {},
-                        trailingIcon = R.drawable.eye_icon,
-                        trailingIconDescription = "Ícone de olho"
+                        trailingIcon = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.eye_icon),
+                                contentDescription = "Ícone de olho"
+                            )
+                        }
                     )
-
                     Spacer(modifier = Modifier.height(24.dp))
-
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier.fillMaxWidth()
@@ -118,10 +120,7 @@ fun LoginScreen() {
                             text = "Entrar",
                             contentFontSize = 16
                         )
-
-
                         Spacer(modifier = Modifier.height(6.dp))
-
                         Text(
                             "Esqueceu a senha?",
                             modifier = Modifier.padding(vertical = 8.dp),
