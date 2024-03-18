@@ -26,11 +26,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.ecocycle.ecocycleapp.LogoEcoCycle
 import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.BotaoPadrao
 import br.com.ecocycle.ecocycleapp.components.InputTextoPadrao
-import br.com.ecocycle.ecocycleapp.getColorId
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.getColorId
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.LogoEcoCycle
 
 @Composable
 fun LoginScreen() {
