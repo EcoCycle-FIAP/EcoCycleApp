@@ -35,9 +35,10 @@ fun BotaoPadrao(
                 id = contentColor!!
             )
         ),
-        elevation = ButtonDefaults.buttonElevation(defaultElevation = 20.dp),
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp),
         border = BorderStroke(1.dp, colorResource(id = R.color.transparent))
     ) {
         Text(text = text, fontSize = contentFontSize.sp)
     }
 }
+
