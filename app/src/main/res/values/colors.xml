@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">#FFFBFDFB</color>
+    <color name="background">#FFFFFFFF</color>
     <color name="primary">#FF167478</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
@@ -9,4 +9,5 @@
     <color name="input_background">#FFEDEDED</color>
     <color name="modal_background">#FFF6F6F6</color>
     <color name="tabBar_border">#80CCCCCC</color>
+    <color name="recompensas_card_background">#FFF2ECEC</color>
 </resources>
