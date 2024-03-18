@@ -35,7 +35,7 @@ import br.com.ecocycle.ecocycleapp.components.InputTextoPadrao
 import java.lang.NumberFormatException
 
 @Composable
-fun Reciclagem() {
+fun ReciclagemScreen() {
     val context = LocalContext.current
 
     val materialList = listOf(
@@ -129,7 +129,8 @@ fun Reciclagem() {
                 placeholder = "Qual material reciclou?",
                 optionsList = materialList,
                 modifier = Modifier.padding(bottom = 15.dp),
-                onItemSelected = { selectedItem = it }
+                onItemSelected = { selectedItem = it },
+                selectedItem = selectedItem
             )
             InputTextoPadrao(
                 label = "Data da reciclagem",
@@ -154,7 +155,7 @@ fun Reciclagem() {
                 contentFontSize = 18
             )
             BotaoPadrao(
-                onClick = {},
+                onClick = {clearUserInputs()},
                 text = "Cancelar",
                 contentFontSize = 18,
                 containerColor = R.color.transparent,

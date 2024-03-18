@@ -28,10 +28,10 @@ fun DropdownPadrao(
     placeholder: String,
     optionsList: List<String>,
     modifier: Modifier = Modifier,
-    onItemSelected: (String) -> Unit
+    onItemSelected: (String) -> Unit,
+    selectedItem: String
 ) {
     var expanded by remember { mutableStateOf(false) }
-    var selectedItem by remember { mutableStateOf("") }
     var inputWidth by remember { mutableIntStateOf(0) }
 
     val trailingIcon = if (expanded) {
@@ -55,7 +55,7 @@ fun DropdownPadrao(
             label = label,
             placeholder = placeholder,
             value = selectedItem,
-            onValueChange = { selectedItem = it },
+            onValueChange = {},
             modifier = Modifier.onGloballyPositioned { coordinates ->
                 inputWidth = coordinates.size.width
             }.then(modifier),
