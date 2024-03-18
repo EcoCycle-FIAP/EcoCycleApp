@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EcoCycle App</string>
+    <string name="metal">Metal</string>
+    <string name="papel">Papel</string>
+    <string name="plastico">Plástico</string>
+    <string name="vidro">Vidro</string>
 </resources>

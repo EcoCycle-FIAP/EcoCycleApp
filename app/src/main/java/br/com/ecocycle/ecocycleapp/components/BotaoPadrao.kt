@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,7 +23,8 @@ fun BotaoPadrao(
     height: Int? = 55,
     contentFontSize: Int,
     containerColor: Int? = R.color.primary,
-    contentColor: Int? = R.color.white
+    contentColor: Int? = R.color.white,
+    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(defaultElevation = 20.dp)
 ) {
     OutlinedButton(
         onClick = onClick,
@@ -35,10 +37,9 @@ fun BotaoPadrao(
                 id = contentColor!!
             )
         ),
-        elevation = ButtonDefaults.buttonElevation(defaultElevation = 8.dp),
+        elevation = elevation,
         border = BorderStroke(1.dp, colorResource(id = R.color.transparent))
     ) {
         Text(text = text, fontSize = contentFontSize.sp)
     }
 }
-

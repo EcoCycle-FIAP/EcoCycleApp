@@ -3,7 +3,6 @@ package br.com.ecocycle.ecocycleapp.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.DropdownMenu
@@ -27,10 +26,12 @@ import br.com.ecocycle.ecocycleapp.R
 fun DropdownPadrao(
     label: String,
     placeholder: String,
-    optionsList: List<String>
+    optionsList: List<String>,
+    modifier: Modifier = Modifier,
+    onItemSelected: (String) -> Unit,
+    selectedItem: String
 ) {
     var expanded by remember { mutableStateOf(false) }
-    var selectedItem by remember { mutableStateOf("") }
     var inputWidth by remember { mutableIntStateOf(0) }
 
     val trailingIcon = if (expanded) {
@@ -47,7 +48,6 @@ fun DropdownPadrao(
 
     Column(
         modifier = Modifier
-            .padding(16.dp)
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -55,10 +55,10 @@ fun DropdownPadrao(
             label = label,
             placeholder = placeholder,
             value = selectedItem,
-            onValueChange = { selectedItem = it },
+            onValueChange = {},
             modifier = Modifier.onGloballyPositioned { coordinates ->
                 inputWidth = coordinates.size.width
-            },
+            }.then(modifier),
             trailingIcon =
             {
                 Icon(
@@ -80,7 +80,7 @@ fun DropdownPadrao(
                 DropdownMenuItem(
                     text = { Text(text = label) },
                     onClick = {
-                        selectedItem = label
+                        onItemSelected(label)
                         expanded = false
                     }
                 )
