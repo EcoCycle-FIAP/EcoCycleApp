@@ -9,8 +9,8 @@ import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.MapUiSettings
 import androidx.compose.runtime.remember
 import androidx.compose.ui.unit.dp
-import br.com.ecocycle.ecocycleapp.brazilState
-import br.com.ecocycle.ecocycleapp.defaultCameraPosition
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MapProperties
 import com.google.maps.android.compose.MapType
@@ -19,6 +19,9 @@ import com.google.maps.android.compose.MarkerInfoWindow
 import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 
+val brazilState = LatLng(-23.5814732, -46.6812221)
+
+val defaultCameraPosition = CameraPosition.fromLatLngZoom(brazilState, 10f)
 
 
 @Composable
@@ -75,3 +78,4 @@ fun MapaLoad() {
         }
     )
 }
+
