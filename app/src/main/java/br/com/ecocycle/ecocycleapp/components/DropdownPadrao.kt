@@ -27,7 +27,8 @@ fun DropdownPadrao(
     label: String,
     placeholder: String,
     optionsList: List<String>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onItemSelected: (String) -> Unit
 ) {
     var expanded by remember { mutableStateOf(false) }
     var selectedItem by remember { mutableStateOf("") }
@@ -79,7 +80,7 @@ fun DropdownPadrao(
                 DropdownMenuItem(
                     text = { Text(text = label) },
                     onClick = {
-                        selectedItem = label
+                        onItemSelected(label)
                         expanded = false
                     }
                 )
