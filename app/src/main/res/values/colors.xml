@@ -8,4 +8,5 @@
     <color name="transparent">#00000000</color>
     <color name="input_background">#FFEDEDED</color>
     <color name="modal_background">#FFF6F6F6</color>
+    <color name="tabBar_border">#80CCCCCC</color>
 </resources>
