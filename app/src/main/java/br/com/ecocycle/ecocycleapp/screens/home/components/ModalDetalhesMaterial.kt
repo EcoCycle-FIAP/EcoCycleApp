@@ -11,7 +11,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.ModalPadrao
 
 @Composable
@@ -20,18 +19,21 @@ fun ModalDetalhesMaterial(
     questionOne: String,
     answerOne: String,
     questionTwo: String,
-    answerTwo: String
+    answerTwo: String,
+    text: String,
+    imageCard: Int
 ) {
     ModalPadrao(
-        title = "Metal",
+        title = text,
         titleFontSize = 24.sp,
+        imageCard = imageCard,
         onDismissRequest = onDismissRequest,
         modalContent = {
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(painter = painterResource(id = R.drawable.metalimg), contentDescription = "")
+                Image(painter = painterResource(id = imageCard), contentDescription = "Imagem do card")
                 Spacer(modifier = Modifier.height(20.dp))
                 Text(
                     text = questionOne,

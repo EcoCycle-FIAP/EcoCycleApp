@@ -1,6 +1,7 @@
 package br.com.ecocycle.ecocycleapp.screens.home
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -28,6 +29,8 @@ fun HomeScreen() {
     var showModalPlastico by remember { mutableStateOf(false) }
     var showModalPapel by remember { mutableStateOf(false) }
     var showModalVidro by remember { mutableStateOf(false) }
+    var showModalEletronico by remember { mutableStateOf(false) }
+    var showModalOrganico by remember { mutableStateOf(false) }
 
 
     Column(
@@ -43,81 +46,116 @@ fun HomeScreen() {
                 .height(320.dp)
         )
         Spacer(modifier = Modifier.height(20.dp))
-        Row {
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
             CardMaterial(
                 image = R.drawable.metal,
-                imageDescription = "Foto de metal",
+                imageDescription = "Desenho de materiais de metal",
                 text = "Metal",
-                onClick = { showModalMetal = true })
+                onClick = { showModalMetal = true }
+            )
             if (showModalMetal) {
                 ModalDetalhesMaterial(
                     onDismissRequest = { showModalMetal = false },
                     questionOne = "Quais são os produtos feitos de metal?",
                     answerOne = "No dia a dia, encontramos metal em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
                     questionTwo = "O que pode ser feito com metal reciclado?",
-                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do metal reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
+                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do metal reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    text = "Metal",
+                    imageCard = R.drawable.metal
                 )
             }
-        }
-        Spacer(modifier = Modifier.height(20.dp))
-        Row {
             CardMaterial(
                 image = R.drawable.plastico,
-                imageDescription = "Foto de plástico",
+                imageDescription = "Desenho de materiais de plástico",
                 text = "Plástico",
-                onClick = { showModalPlastico = true })
+                onClick = { showModalPlastico = true }
+            )
             if (showModalPlastico) {
                 ModalDetalhesMaterial(
                     onDismissRequest = { showModalPlastico = false },
                     questionOne = "Quais são os produtos feitos de plástico?",
                     answerOne = "No dia a dia, encontramos plástico em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
                     questionTwo = "O que pode ser feito com plástico reciclado?",
-                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do plástico reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
+                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do plástico reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    text = "Plástico",
+                    imageCard = R.drawable.plastico
                 )
             }
         }
-
-        Column() {
-            Spacer(modifier = Modifier.height(20.dp))
-            Row {
-                CardMaterial(
-                    image = R.drawable.papel,
-                    imageDescription = "Foto de papel",
+        Spacer(modifier = Modifier.height(10.dp))
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+            CardMaterial(
+                image = R.drawable.papel,
+                imageDescription = "Desenho de materiais de papel",
+                text = "Papel",
+                onClick = { showModalPapel = true }
+            )
+            if (showModalPapel) {
+                ModalDetalhesMaterial(
+                    onDismissRequest = { showModalPapel = false },
+                    questionOne = "Quais são os produtos feitos de papel?",
+                    answerOne = "No dia a dia, encontramos papel em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    questionTwo = "O que pode ser feito com papel reciclado?",
+                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do papel reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
                     text = "Papel",
-                    onClick = { showModalPapel = true })
-                if (showModalPapel) {
-                    ModalDetalhesMaterial(
-                        onDismissRequest = { showModalPapel = false },
-                        questionOne = "Quais são os produtos feitos de papel?",
-                        answerOne = "No dia a dia, encontramos papel em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
-                        questionTwo = "O que pode ser feito com papel reciclado?",
-                        answerTwo = "Alguns dos produtos que podem ser feitos a partir do papel reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
-                    )
-                }
+                    imageCard = R.drawable.papel
+                )
             }
-            Spacer(modifier = Modifier.height(20.dp))
-            Row() {
-                CardMaterial(
-                    image = R.drawable.vidro,
-                    imageDescription = "Foto de vidro",
+            CardMaterial(
+                image = R.drawable.vidro,
+                imageDescription = "Desenho de materiais de vidro",
+                text = "Vidro",
+                onClick = { showModalVidro = true }
+            )
+            if (showModalVidro) {
+                ModalDetalhesMaterial(
+                    onDismissRequest = { showModalVidro = false },
+                    questionOne = "Quais são os produtos feitos de plástico?",
+                    answerOne = "No dia a dia, encontramos plástico em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    questionTwo = "O que pode ser feito com plástico reciclado?",
+                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do plástico reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
                     text = "Vidro",
-                    onClick = { showModalVidro = true })
-                if (showModalVidro) {
-                    ModalDetalhesMaterial(
-                        onDismissRequest = { showModalVidro = false },
-                        questionOne = "Quais são os produtos feitos de vidro?",
-                        answerOne = "No dia a dia, encontramos vidro em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
-                        questionTwo = "O que pode ser feito com vidro reciclado?",
-                        answerTwo = "Alguns dos produtos que podem ser feitos a partir do vidro reciclado são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS."
-                    )
-                }
+                    imageCard = R.drawable.vidro
+                )
             }
         }
-
-    }
-
-    Column {
-
+        Spacer(modifier = Modifier.height(10.dp))
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {
+            CardMaterial(
+                image = R.drawable.eletronico,
+                imageDescription = "Desenho de materiais eletrônicos",
+                text = "Eletrônicos",
+                onClick = { showModalEletronico = true }
+            )
+            if (showModalEletronico) {
+                ModalDetalhesMaterial(
+                    onDismissRequest = { showModalEletronico = false },
+                    questionOne = "Quais são os produtos feitos de materiais eletrônicos?",
+                    answerOne = "No dia a dia, encontramos materiais eletrônicos em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    questionTwo = "O que pode ser feito com materiais eletrônicos reciclados?",
+                    answerTwo = "Alguns dos produtos que podem ser feitos a partir do material eletrônico são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    text = "Eletrônico",
+                    imageCard = R.drawable.eletronico
+                )
+            }
+            CardMaterial(
+                image = R.drawable.organico,
+                imageDescription = "Desenho de materiais orgânicos",
+                text = "Orgânico",
+                onClick = { showModalOrganico = true }
+            )
+            if (showModalOrganico) {
+                ModalDetalhesMaterial(
+                    onDismissRequest = { showModalOrganico = false },
+                    questionOne = "Quais são os produtos feitos de alimentos orgânicos?",
+                    answerOne = "No dia a dia, encontramos alimentos orgânicos em BLA BLA BLA BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    questionTwo = "O que pode ser feito com alimentos orgânicos?",
+                    answerTwo = "Algumas coisas que podem ser feitas com alimentos orgânicos são..... asdkasjds adkasjd dka BDSDSDASJH WEJIW DOSOWQ IDJASKDHAOWEK\u2028SKSDKA FSLKFLSD WLEKW. LSKDLSKLSK DLSKDS LDS.",
+                    text = "Orgânico",
+                    imageCard = R.drawable.organico
+                )
+            }
+        }
     }
 }
 

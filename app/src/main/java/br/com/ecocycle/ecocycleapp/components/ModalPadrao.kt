@@ -17,9 +17,10 @@ import br.com.ecocycle.ecocycleapp.R
 fun ModalPadrao(
     title: String,
     titleFontSize: TextUnit,
-    modalContent: @Composable (() -> Unit),
+    modalContent: @Composable () -> Unit,
     onDismissRequest: () -> Unit,
-    confirmButton: @Composable (() -> Unit)? = {},
+    confirmButton: @Composable() (() -> Unit)? = {},
+    imageCard: Int,
 ) {
     AlertDialog(
         title = {
