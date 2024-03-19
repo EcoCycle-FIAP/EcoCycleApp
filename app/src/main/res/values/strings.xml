@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">EcoCycle App</string>
     <string name="google_map_api_key" translatable="false">AIzaSyDSlbKw4WjcFCky6hnIqEN-0-hVuGeZNEA-</string>
-
-</resources>
     <string name="metal">Metal</string>
     <string name="papel">Papel</string>
     <string name="plastico">Plástico</string>
     <string name="vidro">Vidro</string>
     <string name="card_saldo_label">Total de pontos ganhos</string>
+    <string name="card_saldo_coin_description">Desenho de moedas empilhadas</string>
     <string name="pontos_abreviacao">pts</string>
+    <string name="card_recompensas_label">Recompensas</string>
+    <string name="card_recompensas_present_description">Desenho de um presente embalado</string>
+    <string name="card_recompensas_botao_compra">Comprar</string>
 </resources>

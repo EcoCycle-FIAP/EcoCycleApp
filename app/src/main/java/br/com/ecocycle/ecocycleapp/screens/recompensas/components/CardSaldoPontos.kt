@@ -40,7 +40,7 @@ fun CardSaldoPontos() {
                 Column(Modifier.fillMaxHeight(), verticalArrangement = Arrangement.Center) {
                     Image(
                         painter = painterResource(id = R.drawable.coins),
-                        contentDescription = "Desenho de moedas empilhadas",
+                        contentDescription = context.getString(R.string.card_saldo_coin_description),
                         Modifier.size(60.dp)
                     )
                 }
