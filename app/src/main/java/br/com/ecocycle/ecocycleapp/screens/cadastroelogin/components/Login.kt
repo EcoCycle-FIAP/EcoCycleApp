@@ -1,6 +1,7 @@
 package br.com.ecocycle.ecocycleapp.screens.cadastroelogin.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -11,6 +12,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -19,21 +22,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecocycle.ecocycleapp.LogoEcoCycle
 import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.BotaoPadrao
 import br.com.ecocycle.ecocycleapp.components.InputTextoPadrao
-import br.com.ecocycle.ecocycleapp.getColorId
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -45,6 +48,7 @@ fun LoginScreen() {
                 .fillMaxWidth()
                 .padding(vertical = 50.dp, horizontal = 0.dp)
                 .align(Alignment.Center)
+                .verticalScroll(rememberScrollState())
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -115,7 +119,7 @@ fun LoginScreen() {
                     ) {
                         BotaoPadrao(
                             onClick = {
-
+                                navController.navigate("home")
                             },
                             text = "Entrar",
                             contentFontSize = 16
@@ -124,7 +128,7 @@ fun LoginScreen() {
                         Text(
                             "Esqueceu a senha?",
                             modifier = Modifier.padding(vertical = 8.dp),
-                            color = getColorId(colorResId = R.color.primary),
+                            color = colorResource(id = R.color.primary),
                             fontWeight = FontWeight.Bold
                         )
                     }
@@ -147,16 +151,13 @@ fun LoginScreen() {
                 Text("Não tem uma conta ainda? ")
                 Text(
                     "Cadastre-se",
-                    color = getColorId(colorResId = R.color.primary),
-                    fontWeight = FontWeight.Bold
+                    color = colorResource(id = R.color.primary),
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.clickable {
+                        navController.navigate("cadastro")
+                    }
                 )
             }
         }
     }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun LoginScreenPreview() {
-    LoginScreen()
 }
