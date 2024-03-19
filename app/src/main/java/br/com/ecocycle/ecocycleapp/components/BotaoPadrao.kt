@@ -1,6 +1,7 @@
 package br.com.ecocycle.ecocycleapp.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -24,7 +25,8 @@ fun BotaoPadrao(
     contentFontSize: Int,
     containerColor: Int? = R.color.primary,
     contentColor: Int? = R.color.white,
-    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(defaultElevation = 20.dp)
+    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(defaultElevation = 20.dp),
+    contentPadding: PaddingValues? = ButtonDefaults.ContentPadding
 ) {
     OutlinedButton(
         onClick = onClick,
@@ -38,7 +40,8 @@ fun BotaoPadrao(
             )
         ),
         elevation = elevation,
-        border = BorderStroke(1.dp, colorResource(id = R.color.transparent))
+        border = BorderStroke(1.dp, colorResource(id = R.color.transparent)),
+        contentPadding = contentPadding ?: ButtonDefaults.ContentPadding
     ) {
         Text(text = text, fontSize = contentFontSize.sp)
     }
