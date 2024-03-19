@@ -17,7 +17,7 @@ import br.com.ecocycle.ecocycleapp.R
 fun ModalPadrao(
     title: String,
     titleFontSize: TextUnit,
-    textComponent: @Composable (() -> Unit),
+    modalContent: @Composable (() -> Unit),
     onDismissRequest: () -> Unit,
     confirmButton: @Composable (() -> Unit)? = {},
 ) {
@@ -32,7 +32,7 @@ fun ModalPadrao(
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        text = textComponent,
+        text = modalContent,
         containerColor = colorResource(id = R.color.modal_background),
         confirmButton = confirmButton?: {},
         dismissButton = {
