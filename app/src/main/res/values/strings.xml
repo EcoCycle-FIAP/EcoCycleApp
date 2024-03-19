@@ -3,3 +3,10 @@
     <string name="google_map_api_key" translatable="false">AIzaSyDSlbKw4WjcFCky6hnIqEN-0-hVuGeZNEA-</string>
 
 </resources>
+    <string name="metal">Metal</string>
+    <string name="papel">Papel</string>
+    <string name="plastico">Plástico</string>
+    <string name="vidro">Vidro</string>
+    <string name="card_saldo_label">Total de pontos ganhos</string>
+    <string name="pontos_abreviacao">pts</string>
+</resources>
