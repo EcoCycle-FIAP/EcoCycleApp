@@ -18,6 +18,7 @@ import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberMarkerState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import br.com.ecocycle.ecocycleapp.screens.mapa.components.CardPontoColeta
 
 
 val brazilState = LatLng(-23.5814732, -46.6812221)
@@ -64,6 +65,7 @@ fun MapaScreen(
 
 
     }
+    CardPontoColeta()
 }
 
 @Composable

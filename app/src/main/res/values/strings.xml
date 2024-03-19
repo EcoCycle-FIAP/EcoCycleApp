@@ -13,4 +13,6 @@
     <string name="card_recompensas_botao_compra">Comprar</string>
     <string name="card_historico_label">Histórico de Pontos</string>
     <string name="card_historico_picture_description">Foto do usuário</string>
+    <string name="recompensas_highlighted_title">Recicle hoje, transforme o amanhã.</string>
+    <string name="recompensas_subtitle">Juntos fazemos a diferença!</string>
 </resources>
