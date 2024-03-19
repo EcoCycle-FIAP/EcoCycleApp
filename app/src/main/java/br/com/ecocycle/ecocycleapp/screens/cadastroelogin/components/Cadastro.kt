@@ -1,6 +1,7 @@
 package br.com.ecocycle.ecocycleapp.screens.cadastroelogin.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,15 +19,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.BotaoPadrao
 import br.com.ecocycle.ecocycleapp.components.InputTextoPadrao
 
 @Composable
-fun CadastroScreen() {
+fun CadastroScreen(navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -122,21 +126,38 @@ fun CadastroScreen() {
                     Spacer(modifier = Modifier.height(24.dp))
 
                     BotaoPadrao(
-                        onClick = { /*TODO*/ },
+                        onClick = {
+                            navController.navigate("login")
+                        },
                         text = "Cadastrar",
                         contentFontSize = 16
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(50.dp))
+        }
+
+        //Footer
+        Column(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        ) {
+            Spacer(modifier = Modifier.weight(1f))
             Row(
                 horizontalArrangement = Arrangement.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Text(text = "Já possui uma conta? Entrar")
+                Text("Já possui uma conta? ")
+                Text(
+                    "Entrar",
+                    color = colorResource(id = R.color.primary),
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.clickable {
+                        navController.navigate("login")
+                    }
+                )
             }
-
         }
     }
 }

@@ -6,17 +6,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.res.colorResource
-import br.com.ecocycle.ecocycleapp.screens.mapa.MapaLoad
-import br.com.ecocycle.ecocycleapp.screens.mapa.components.CardPontoColeta
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
-import androidx.annotation.ColorRes
 import androidx.compose.foundation.Image
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import br.com.ecocycle.ecocycleapp.components.TabBar
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.CadastroELoginScreen
 
 @Composable
 fun LogoEcoCycle() {
@@ -24,12 +19,6 @@ fun LogoEcoCycle() {
         painter = painterResource(id = R.drawable.ecocyclelogo),
         contentDescription = "logo"
     )
-}
-
-@Composable
-fun getColorId(@ColorRes colorResId: Int): Color {
-    val context = LocalContext.current
-    return Color(context.getColor(colorResId))
 }
 
 class MainActivity : ComponentActivity() {
@@ -42,9 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    MapaLoad()
-                    CardPontoColeta()
-
+                    RenderScreen()
                 }
             }
         }
@@ -53,5 +40,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun RenderScreen() {
-    TabBar()
+    CadastroELoginScreen()
 }
