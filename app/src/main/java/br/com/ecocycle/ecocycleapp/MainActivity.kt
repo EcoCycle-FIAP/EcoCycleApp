@@ -31,6 +31,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
+                    TabBar()
+                }
+            }
+        }
+    }
+}
                     RenderScreen()
                 }
             }
