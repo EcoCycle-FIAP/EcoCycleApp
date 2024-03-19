@@ -17,6 +17,8 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -32,9 +34,20 @@ import br.com.ecocycle.ecocycleapp.LogoEcoCycle
 import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.components.BotaoPadrao
 import br.com.ecocycle.ecocycleapp.components.InputTextoPadrao
+import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.CadastroScreenViewModel
 
 @Composable
-fun CadastroScreen(navController: NavController) {
+fun CadastroScreen(
+    navController: NavController,
+    cadastroScreenViewModel:CadastroScreenViewModel) {
+
+    val nome by cadastroScreenViewModel.nome.observeAsState(initial = "")
+
+    val email by cadastroScreenViewModel.email.observeAsState(initial = "")
+
+    val senha by cadastroScreenViewModel.senha.observeAsState(initial = "")
+
+    val confSenha by cadastroScreenViewModel.confSenha.observeAsState(initial = "")
 
     Box(
         modifier = Modifier
@@ -83,7 +96,6 @@ fun CadastroScreen(navController: NavController) {
         ) {
             Card(
                 modifier = Modifier
-                    //.height(300.dp)
                     .fillMaxWidth(),
                 colors = CardDefaults.cardColors(Color.White)
             ) {
@@ -91,8 +103,10 @@ fun CadastroScreen(navController: NavController) {
                 InputTextoPadrao(
                     label = "Nome",
                     placeholder = "Digite seu nome completo",
-                    value = "",
-                    onValueChange = {},
+                    value = nome,
+                    onValueChange = {
+                        cadastroScreenViewModel.onNomeChanged(it)
+                    },
                     trailingIcon = {
                         Icon(
                             painter = painterResource(id = R.drawable.account_box_24),
@@ -104,8 +118,10 @@ fun CadastroScreen(navController: NavController) {
                 InputTextoPadrao(
                     label = "Email",
                     placeholder = "Digite seu email",
-                    value = "",
-                    onValueChange = {},
+                    value = email ,
+                    onValueChange = {
+                        cadastroScreenViewModel.onEmailChanged(it)
+                    },
                     trailingIcon = {
                         Icon(
                             painter = painterResource(id = R.drawable.mail_icon),
@@ -117,8 +133,10 @@ fun CadastroScreen(navController: NavController) {
                 InputTextoPadrao(
                     label = "Senha",
                     placeholder = "Digite sua senha",
-                    value = "",
-                    onValueChange = {},
+                    value = senha,
+                    onValueChange = {
+                        cadastroScreenViewModel.onSenhaChanged(it)
+                    },
                     trailingIcon = {
                         Icon(
                             painter = painterResource(id = R.drawable.eye_icon),
@@ -130,8 +148,10 @@ fun CadastroScreen(navController: NavController) {
                 InputTextoPadrao(
                     label = "Confirmar senha",
                     placeholder = "Digite novamente sua senha",
-                    value = "",
-                    onValueChange = {},
+                    value = confSenha,
+                    onValueChange = {
+                        cadastroScreenViewModel.onConfSenhaChanged(it)
+                    },
                     trailingIcon = {
                         Icon(
                             painter = painterResource(id = R.drawable.eye_icon),
