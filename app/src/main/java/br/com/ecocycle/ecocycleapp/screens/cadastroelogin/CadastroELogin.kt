@@ -17,7 +17,7 @@ fun CadastroELoginScreen() {
             LoginScreen(navController)
         }
         composable(route = "cadastro"){
-            CadastroScreen(navController)
+            CadastroScreen(navController, CadastroScreenViewModel())
         }
         composable(route = "home"){
             HomeScreen()

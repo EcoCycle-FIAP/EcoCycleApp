@@ -80,6 +80,9 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-maps:18.2.0")
 
+    implementation("androidx.compose.runtime:runtime-livedata:1.6.3")
+
+
 
 
 
