@@ -136,7 +136,6 @@ fun CadastroScreen(
                     value = senha,
                     onValueChange = {
                         cadastroScreenViewModel.onSenhaChanged(it)
-
                     },
                     trailingIcon = {
                         Icon(
@@ -151,7 +150,7 @@ fun CadastroScreen(
                     placeholder = "Digite novamente sua senha",
                     value = confSenha,
                     onValueChange = {
-                        cadastroScreenViewModel.onSenhaChanged(it)
+                        cadastroScreenViewModel.onConfSenhaChanged(it)
                     },
                     trailingIcon = {
                         Icon(

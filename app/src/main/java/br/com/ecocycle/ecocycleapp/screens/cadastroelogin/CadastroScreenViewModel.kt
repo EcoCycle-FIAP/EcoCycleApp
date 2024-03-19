@@ -47,7 +47,7 @@ class CadastroScreenViewModel : ViewModel() {
         val senha = _senha.value.orEmpty()
         val confSenha = _confSenha.value.orEmpty()
 
-        //campo vazio
+        //campo  vazio
         if (nome.isBlank() || email.isBlank() || senha.isBlank() || confSenha.isBlank()){
             _erro.value = "Nenhum dos campos pode estar vazio"
             return
@@ -76,6 +76,7 @@ class CadastroScreenViewModel : ViewModel() {
             return
         }
 
+        _erro.value = null
 
     }
 
