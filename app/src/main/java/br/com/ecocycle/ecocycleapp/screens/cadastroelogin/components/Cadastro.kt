@@ -118,7 +118,7 @@ fun CadastroScreen(
                 InputTextoPadrao(
                     label = "Email",
                     placeholder = "Digite seu email",
-                    value = email,
+                    value = email ,
                     onValueChange = {
                         cadastroScreenViewModel.onEmailChanged(it)
                     },
