@@ -72,7 +72,7 @@ fun MapaLoad() {
     val cameraPositionState = rememberCameraPositionState {
         position = defaultCameraPosition
     }
-    Mapa(
+    MapaScreen(
         modifier = Modifier.height(350.dp),
         cameraPositionState = cameraPositionState,
         onMapLoaded = {
