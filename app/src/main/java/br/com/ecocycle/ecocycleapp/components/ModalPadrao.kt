@@ -17,9 +17,10 @@ import br.com.ecocycle.ecocycleapp.R
 fun ModalPadrao(
     title: String,
     titleFontSize: TextUnit,
-    textComponent: @Composable (() -> Unit),
+    modalContent: @Composable () -> Unit,
     onDismissRequest: () -> Unit,
-    confirmButton: @Composable (() -> Unit)? = {},
+    confirmButton: @Composable() (() -> Unit)? = {},
+    imageCard: Int,
 ) {
     AlertDialog(
         title = {
@@ -32,7 +33,7 @@ fun ModalPadrao(
                 modifier = Modifier.fillMaxWidth()
             )
         },
-        text = textComponent,
+        text = modalContent,
         containerColor = colorResource(id = R.color.modal_background),
         confirmButton = confirmButton?: {},
         dismissButton = {
