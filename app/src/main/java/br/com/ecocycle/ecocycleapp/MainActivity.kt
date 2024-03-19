@@ -6,8 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.res.colorResource
-import br.com.ecocycle.ecocycleapp.screens.mapa.MapaLoad
-import br.com.ecocycle.ecocycleapp.screens.mapa.components.CardPontoColeta
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
 import androidx.annotation.ColorRes
 import androidx.compose.foundation.Image
@@ -42,16 +40,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    MapaLoad()
-                    CardPontoColeta()
-
+                    TabBar()
                 }
             }
         }
     }
-}
-
-@Composable
-fun RenderScreen() {
-    TabBar()
 }
