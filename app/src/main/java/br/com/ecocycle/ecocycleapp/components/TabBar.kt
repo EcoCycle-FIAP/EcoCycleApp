@@ -28,7 +28,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import br.com.ecocycle.ecocycleapp.R
-import br.com.ecocycle.ecocycleapp.getColorId
 import br.com.ecocycle.ecocycleapp.screens.home.HomeScreen
 import br.com.ecocycle.ecocycleapp.screens.mapa.MapaScreen
 import br.com.ecocycle.ecocycleapp.screens.mapa.defaultCameraPosition
@@ -99,7 +98,7 @@ fun TabBar() {
                         },
                         icon = {
                             val tint =
-                                if (selected) getColorId(colorResId = R.color.primary) else Color.LightGray
+                                if (selected) colorResource(id = R.color.primary) else Color.LightGray
                             Icon(
                                 modifier = Modifier.size(35.dp),
                                 imageVector = navItem.icon,

@@ -25,7 +25,7 @@ fun BotaoPadrao(
     contentFontSize: Int,
     containerColor: Int? = R.color.primary,
     contentColor: Int? = R.color.white,
-    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(defaultElevation = 20.dp),
+    elevation: ButtonElevation? = ButtonDefaults.buttonElevation(defaultElevation = 10.dp),
     contentPadding: PaddingValues? = ButtonDefaults.ContentPadding
 ) {
     OutlinedButton(
