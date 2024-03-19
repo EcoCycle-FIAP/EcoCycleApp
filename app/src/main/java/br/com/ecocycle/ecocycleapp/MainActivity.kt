@@ -5,25 +5,18 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import br.com.ecocycle.ecocycleapp.screens.mapa.MapaLoad
 import br.com.ecocycle.ecocycleapp.screens.mapa.components.CardPontoColeta
 import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
-
-
 import androidx.annotation.ColorRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import br.com.ecocycle.ecocycleapp.components.TabBar
-import br.com.ecocycle.ecocycleapp.ui.theme.EcoCycleAppTheme
 
 @Composable
 fun LogoEcoCycle() {
