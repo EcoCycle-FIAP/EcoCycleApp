@@ -4,7 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -70,8 +70,8 @@ fun ReciclagemScreen() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
-            .fillMaxHeight()
-            .padding(bottom = 30.dp)
+            .fillMaxSize()
+            .padding(bottom = 20.dp)
             .verticalScroll(rememberScrollState()),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -111,6 +111,8 @@ fun ReciclagemScreen() {
                 )
             }
         }
+
+        Spacer(modifier = Modifier.height(30.dp))
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             InputTextoPadrao(

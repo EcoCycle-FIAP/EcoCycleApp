@@ -12,7 +12,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.CadastroELoginScreen
-import br.com.ecocycle.ecocycleapp.components.TabBar
 
 @Composable
 fun LogoEcoCycle() {
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(id = R.color.white)
                 ) {
-                    TabBar()
+                    CadastroELoginScreen()
                 }
             }
         }

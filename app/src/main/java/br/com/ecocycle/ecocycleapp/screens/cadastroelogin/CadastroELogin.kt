@@ -4,9 +4,9 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import br.com.ecocycle.ecocycleapp.components.TabBar
 import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.components.CadastroScreen
 import br.com.ecocycle.ecocycleapp.screens.cadastroelogin.components.LoginScreen
-import br.com.ecocycle.ecocycleapp.screens.home.HomeScreen
 
 @Composable
 fun CadastroELoginScreen() {
@@ -20,7 +20,7 @@ fun CadastroELoginScreen() {
             CadastroScreen(navController, CadastroScreenViewModel())
         }
         composable(route = "home"){
-            HomeScreen()
+            TabBar()
         }
     }
 
