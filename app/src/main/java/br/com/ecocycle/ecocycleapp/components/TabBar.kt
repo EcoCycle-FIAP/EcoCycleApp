@@ -29,11 +29,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import br.com.ecocycle.ecocycleapp.R
 import br.com.ecocycle.ecocycleapp.screens.home.HomeScreen
-import br.com.ecocycle.ecocycleapp.screens.mapa.MapaScreen
-import br.com.ecocycle.ecocycleapp.screens.mapa.defaultCameraPosition
+import br.com.ecocycle.ecocycleapp.screens.mapa.MapaLoad
 import br.com.ecocycle.ecocycleapp.screens.reciclagem.ReciclagemScreen
 import br.com.ecocycle.ecocycleapp.screens.recompensas.RecompensasScreen
-import com.google.maps.android.compose.rememberCameraPositionState
 
 enum class Screens {
     Home,
@@ -121,14 +119,7 @@ fun TabBar() {
                 HomeScreen()
             }
             composable(route = Screens.Mapa.name) {
-
-                val cameraPositionState = rememberCameraPositionState {
-                    position = defaultCameraPosition
-                }
-                MapaScreen(modifier = Modifier.height(350.dp),
-                    cameraPositionState = cameraPositionState,
-                    onMapLoaded = {
-                    })
+                MapaLoad()
             }
             composable(route = Screens.Reciclagem.name) {
                 ReciclagemScreen()
